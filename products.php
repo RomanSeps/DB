@@ -30,7 +30,7 @@ for($i = 1; $i <= $products; $i++){
     $rVenId = random_int(1, $vendor);
     $sql[] = "('$i', '$rName', '$rPrice', '$rVenId')";
 
-    if ($i % 1000 == 0 || $i == $products) {
+    if ($i % 10000 == 0 || $i == $products) {
         $product_sql = "INSERT INTO product (id, name, price, vendor_id) VALUES " . implode(", ", $sql);
         $conn->query($product_sql);
         $sql = []; 
